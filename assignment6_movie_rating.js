@@ -1,5 +1,3 @@
-// ASSIGNMENT 6 — MOVIE RATING SYSTEM
-
 let movies = [
     {
         id: 1,
@@ -30,7 +28,6 @@ let movies = [
         actors: ["Matthew McConaughey", "Anne Hathaway"]
     }
 ];
-
 function averageRating(movie) {
     if (movie.ratings.length === 0) return 0;
 
@@ -38,7 +35,6 @@ function averageRating(movie) {
         sum + rating, 0
     ) / movie.ratings.length;
 }
-
 function addRating(movieId, rating) {
     const movie = movies.find(movie => movie.id === movieId);
 
@@ -48,7 +44,6 @@ function addRating(movieId, rating) {
     movie.ratings.push(rating);
     return "Rating added.";
 }
-
 function removeRating(movieId, ratingIndex) {
     const movie = movies.find(movie => movie.id === movieId);
 
@@ -56,11 +51,9 @@ function removeRating(movieId, ratingIndex) {
     if (ratingIndex < 0 || ratingIndex >= movie.ratings.length) {
         return "Invalid rating index.";
     }
-
     movie.ratings.splice(ratingIndex, 1);
     return "Rating removed.";
 }
-
 function highestRatedMovie() {
     return movies.reduce((highest, movie) =>
         averageRating(movie) > averageRating(highest) ? movie : highest
@@ -122,7 +115,6 @@ function top3Actors() {
         .slice(0, 3);
 }
 
-// TEST
 console.log("Inception Average:", averageRating(movies[0]));
 console.log(addRating(1, 5));
 console.log("Highest:", highestRatedMovie());
