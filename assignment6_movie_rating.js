@@ -115,6 +115,7 @@ function top3Actors() {
         .slice(0, 3);
 }
 
+
 console.log("Inception Average:", averageRating(movies[0]));
 console.log(addRating(1, 5));
 console.log("Highest:", highestRatedMovie());
